@@ -6,7 +6,7 @@ value1  = int(input('Enter the 1st Value : '))
 value2 = int(input('Enter the 2nd value: '))
 # Enter the operand
 op_list  = ['+', '-', '*', '/', '%', '**']
-op = str(input('Enter the arithmetic operator : '))
+op = input('Enter the arithmetic operator : ')
 
 return_data = op in op_list
 if return_data == True:
