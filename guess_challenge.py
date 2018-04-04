@@ -14,7 +14,7 @@ OUTPUT : Check if user guess the correct number and the no of attempts
 # 3. On all subsequent turns, if a guess is
 #       closer to the number than the previous guess return "WARMER!"
 #       farther from the number than the previous guess, return "COLDER!"
-# 4. When the player's guess equals the number, tell them they've guessed correctly and 
+# 4. When the player's guess equals the number, tell them they've guessed correctly and
 # how many guesses it took!
 
 # Import the random library
