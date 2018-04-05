@@ -10,6 +10,11 @@ DOCSTRING : This is a Tic Tac Toe Game Python Program
 from IPython.display import clear_output
 import random
 
+Player1 = input('Enter Your Name : Player 1 : ')
+Player2 = input('Enter Your Name : Player 2 : ')
+print('Welcome {} and {} in the game'.format(Player1, Player2))
+print('Lest Start the Game')
+
 def display_board(board):
     clear_output() #This will clear the board to play a fresh game
 
@@ -29,7 +34,7 @@ def display_board(board):
 def player_input():
     marker = ''
     while not (marker == 'X' or marker == 'O'):
-        marker = input("Player 1 : Do you want to be 'X' or 'O' ? ").upper()
+        marker = input("{} : Do you want to be 'X' or 'O' ? ".format(Player1)).upper()
 
     if marker == 'X':
         return ('X', 'O')
@@ -56,9 +61,9 @@ def win_check(board, mark):
 # Function to randomly decide which player will go first
 def choose_first():
     if random.randint(0,1) == 0:
-        return 'Player 2'
+        return Player2
     else:
-        return 'Player 1'
+        return Player1
 
 # Write a function to check whether a space in the board is available or not, returns a boolean value
 def space_check(board, position):
@@ -106,7 +111,7 @@ while True:
         game_on = False
     
     while game_on:
-        if turn == 'Player 1':
+        if turn == Player1:
             # Player 1 turn
 
             display_board(theBoard)
@@ -115,7 +120,7 @@ while True:
 
             if win_check(theBoard,player1_marker):
                 display_board(theBoard)
-                print('Congratulations! You have won the game!')
+                print('Congratulations! {}.. You have won the game!'.format(Player1))
                 game_on = False
             else:
                 if full_board_check(theBoard):
@@ -123,7 +128,7 @@ while True:
                     print('The game is a Draw')
                     break
                 else:
-                    turn = 'Player 2'
+                    turn = Player2
 
         else:
             #Player 2 Turn
@@ -133,7 +138,7 @@ while True:
 
             if win_check(theBoard, player2_marker):
                 display_board(theBoard)
-                print('Player 2 has own the game')
+                print('{} has own the game'.format(Player2))
                 game_on = False
             else:
                 if full_board_check(theBoard):
@@ -141,6 +146,6 @@ while True:
                     print('The game is a draw')
                     break
                 else:
-                    turn = 'Player 1'
+                    turn = Player1
     if not replay():
         break
